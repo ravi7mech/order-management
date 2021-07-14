@@ -1,0 +1,161 @@
+{
+  "name": "OrdProductOrder",
+  "fields": [
+    {
+      "fieldName": "href",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "externalId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "priority",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "category",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orderDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "completionDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "requestedStartDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "requestedCompletionDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "expectedCompletionDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "notificationContact",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "customerId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "shoppingCartId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "locationId",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "ordContactDetails",
+      "otherEntityRelationshipName": "ordProductOrder",
+      "relationshipName": "ordContactDetails",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "ordNote",
+      "otherEntityRelationshipName": "ordProductOrder",
+      "relationshipName": "ordNote",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "ordChannel",
+      "otherEntityRelationshipName": "ordProductOrder",
+      "relationshipName": "ordChannel",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "ordOrderPrice",
+      "otherEntityRelationshipName": "ordProductOrder",
+      "relationshipName": "ordOrderPrice",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "ordBillingAccountRef",
+      "otherEntityRelationshipName": "ordProductOrder",
+      "relationshipName": "ordBillingAccountRef",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ordCharacteristics",
+      "otherEntityRelationshipName": "ordProductOrder",
+      "relationshipName": "ordCharacteristics"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ordOrderItem",
+      "otherEntityRelationshipName": "ordProductOrder",
+      "relationshipName": "ordOrderItem"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ordPaymentRef",
+      "otherEntityRelationshipName": "ordProductOrder",
+      "relationshipName": "ordPaymentRef"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ordReason",
+      "otherEntityRelationshipName": "ordProductOrder",
+      "relationshipName": "ordReason"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ordContract",
+      "otherEntityRelationshipName": "ordProductOrder",
+      "relationshipName": "ordContract"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ordFulfillment",
+      "otherEntityRelationshipName": "ordProductOrder",
+      "relationshipName": "ordFulfillment"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ordAcquisition",
+      "otherEntityRelationshipName": "ordProductOrder",
+      "relationshipName": "ordAcquisition"
+    }
+  ],
+  "entityTableName": "ord_product_order",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "OrderManagement",
+  "clientRootFolder": "OrderManagement",
+  "databaseType": "sql",
+  "changelogDate": "20210714073617"
+}

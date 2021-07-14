@@ -15,7 +15,50 @@
     <property name="datetimeType" value="datetime" dbms="oracle, mssql, postgresql, h2"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073617_added_entity_OrdProductOrder.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073618_added_entity_OrdBillingAccountRef.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073619_added_entity_OrdContactDetails.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073620_added_entity_OrdCharacteristics.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073621_added_entity_OrdNote.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073622_added_entity_OrdChannel.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073623_added_entity_OrdOrderPrice.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073624_added_entity_OrdOrderItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073625_added_entity_OrdOrderItemProvisioning.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073626_added_entity_OrdOrderItemChar.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073627_added_entity_OrdProvisiongChar.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073628_added_entity_OrdPaymentRef.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073629_added_entity_OrdPriceAlteration.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073630_added_entity_OrdReason.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073631_added_entity_OrdContract.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073632_added_entity_OrdContractCharacteristics.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073633_added_entity_OrdFulfillment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073634_added_entity_OrdFulfillmentChar.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073635_added_entity_OrdAcquisition.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073636_added_entity_OrdPriceAmount.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073637_added_entity_OrdProductOfferingRef.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073638_added_entity_OrdAcquisitionChar.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073639_added_entity_OrdOrderItemRelationship.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073640_added_entity_OrdProduct.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073641_added_entity_OrdPlace.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073642_added_entity_OrdProductCharacteristics.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20210714073617_added_entity_constraints_OrdProductOrder.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073620_added_entity_constraints_OrdCharacteristics.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073623_added_entity_constraints_OrdOrderPrice.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073624_added_entity_constraints_OrdOrderItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073626_added_entity_constraints_OrdOrderItemChar.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073627_added_entity_constraints_OrdProvisiongChar.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073628_added_entity_constraints_OrdPaymentRef.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073629_added_entity_constraints_OrdPriceAlteration.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073630_added_entity_constraints_OrdReason.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073631_added_entity_constraints_OrdContract.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073632_added_entity_constraints_OrdContractCharacteristics.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073633_added_entity_constraints_OrdFulfillment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073634_added_entity_constraints_OrdFulfillmentChar.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073635_added_entity_constraints_OrdAcquisition.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073638_added_entity_constraints_OrdAcquisitionChar.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073640_added_entity_constraints_OrdProduct.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210714073641_added_entity_constraints_OrdPlace.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

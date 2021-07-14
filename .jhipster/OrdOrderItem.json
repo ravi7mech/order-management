@@ -1,0 +1,119 @@
+{
+  "name": "OrdOrderItem",
+  "fields": [
+    {
+      "fieldName": "billerId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "fullfillmentId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "acquisitionId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "action",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "state",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "itemType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "itemDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cartItemId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "ordOrderPrice",
+      "otherEntityRelationshipName": "ordOrderItem",
+      "relationshipName": "ordOrderPrice",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "ordOrderItemRelationship",
+      "otherEntityRelationshipName": "ordOrderItem",
+      "relationshipName": "ordOrderItemRelationship",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "ordProductOfferingRef",
+      "otherEntityRelationshipName": "ordOrderItem",
+      "relationshipName": "ordProductOfferingRef",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "ordProduct",
+      "otherEntityRelationshipName": "ordOrderItem",
+      "relationshipName": "ordProduct",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "ordOrderItemProvisioning",
+      "otherEntityRelationshipName": "ordOrderItem",
+      "relationshipName": "ordOrderItemProvisioning",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ordOrderItemChar",
+      "otherEntityRelationshipName": "ordOrderItem",
+      "relationshipName": "ordOrderItemChar"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ordProductOrder",
+      "otherEntityRelationshipName": "ordOrderItem",
+      "relationshipName": "ordProductOrder"
+    }
+  ],
+  "entityTableName": "ord_order_item",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "OrderManagement",
+  "clientRootFolder": "OrderManagement",
+  "databaseType": "sql",
+  "changelogDate": "20210714073624"
+}

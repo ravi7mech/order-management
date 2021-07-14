@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity OrdPriceAlteration.
+    -->
+    <changeSet id="20210714073629-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="ord_price_amount_id"
+                                 baseTableName="ord_price_alteration"
+                                 constraintName="fk_ord_price_alteration__ord_price_amount_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ord_price_amount"/>
+
+        <addForeignKeyConstraint baseColumnNames="ord_order_price_id"
+                                 baseTableName="ord_price_alteration"
+                                 constraintName="fk_ord_price_alteration__ord_order_price_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ord_order_price"/>
+    </changeSet>
+</databaseChangeLog>

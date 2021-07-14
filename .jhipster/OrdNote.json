@@ -1,0 +1,39 @@
+{
+  "name": "OrdNote",
+  "fields": [
+    {
+      "fieldName": "author",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "text",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "ordProductOrder",
+      "otherEntityRelationshipName": "ordNote",
+      "relationshipName": "ordProductOrder",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "ord_note",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "OrderManagement",
+  "clientRootFolder": "OrderManagement",
+  "databaseType": "sql",
+  "changelogDate": "20210714073621"
+}

@@ -1,0 +1,52 @@
+{
+  "name": "OrdContract",
+  "fields": [
+    {
+      "fieldName": "contractId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "languageId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "termTypeCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "action",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ordContractCharacteristics",
+      "otherEntityRelationshipName": "ordContract",
+      "relationshipName": "ordContractCharacteristics"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ordProductOrder",
+      "otherEntityRelationshipName": "ordContract",
+      "relationshipName": "ordProductOrder"
+    }
+  ],
+  "entityTableName": "ord_contract",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "OrderManagement",
+  "clientRootFolder": "OrderManagement",
+  "databaseType": "sql",
+  "changelogDate": "20210714073631"
+}

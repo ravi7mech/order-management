@@ -1,0 +1,60 @@
+{
+  "name": "OrdFulfillment",
+  "fields": [
+    {
+      "fieldName": "workorderId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "appointmentId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "orderFulfillmentType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "alternateShippingAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orderCallAheadNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orderJobComments",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ordFulfillmentChar",
+      "otherEntityRelationshipName": "ordFulfillment",
+      "relationshipName": "ordFulfillmentChar"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ordProductOrder",
+      "otherEntityRelationshipName": "ordFulfillment",
+      "relationshipName": "ordProductOrder"
+    }
+  ],
+  "entityTableName": "ord_fulfillment",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "OrderManagement",
+  "clientRootFolder": "OrderManagement",
+  "databaseType": "sql",
+  "changelogDate": "20210714073633"
+}

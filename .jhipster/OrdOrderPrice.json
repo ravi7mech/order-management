@@ -1,0 +1,71 @@
+{
+  "name": "OrdOrderPrice",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "priceType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "unitOfMeasure",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "recurringChargePeriod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "priceId",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "ordPriceAmount",
+      "otherEntityRelationshipName": "ordOrderPrice",
+      "relationshipName": "ordPriceAmount",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ordPriceAlteration",
+      "otherEntityRelationshipName": "ordOrderPrice",
+      "relationshipName": "ordPriceAlteration"
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "ordProductOrder",
+      "otherEntityRelationshipName": "ordOrderPrice",
+      "relationshipName": "ordProductOrder",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "ordOrderItem",
+      "otherEntityRelationshipName": "ordOrderPrice",
+      "relationshipName": "ordOrderItem",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "ord_order_price",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "OrderManagement",
+  "clientRootFolder": "OrderManagement",
+  "databaseType": "sql",
+  "changelogDate": "20210714073623"
+}

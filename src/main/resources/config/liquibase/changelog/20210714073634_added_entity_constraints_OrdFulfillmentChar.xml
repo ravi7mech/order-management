@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity OrdFulfillmentChar.
+    -->
+    <changeSet id="20210714073634-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="ord_fulfillment_id"
+                                 baseTableName="ord_fulfillment_char"
+                                 constraintName="fk_ord_fulfillment_char__ord_fulfillment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ord_fulfillment"/>
+    </changeSet>
+</databaseChangeLog>
