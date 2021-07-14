@@ -1,0 +1,61 @@
+{
+  "name": "OrdPriceAlteration",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "priceType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "unitOfMeasure",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "recurringChargePeriod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "applicationDuration",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "priority",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "ordPriceAmount",
+      "otherEntityRelationshipName": "ordPriceAlteration",
+      "relationshipName": "ordPriceAmount",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ordOrderPrice",
+      "otherEntityRelationshipName": "ordPriceAlteration",
+      "relationshipName": "ordOrderPrice"
+    }
+  ],
+  "entityTableName": "ord_price_alteration",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "OrderManagement",
+  "clientRootFolder": "OrderManagement",
+  "databaseType": "sql",
+  "changelogDate": "20210714073629"
+}

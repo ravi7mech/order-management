@@ -1,0 +1,67 @@
+{
+  "name": "OrdBillingAccountRef",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "href",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cartPriceId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "billingAccountId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "billingSystem",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deliveryMethod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "billingAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quoteId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "salesOrderId",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "ordProductOrder",
+      "otherEntityRelationshipName": "ordBillingAccountRef",
+      "relationshipName": "ordProductOrder",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "ord_billing_account_ref",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "OrderManagement",
+  "clientRootFolder": "OrderManagement",
+  "databaseType": "sql",
+  "changelogDate": "20210714073618"
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity OrdOrderItem.
+    -->
+    <changeSet id="20210714073624-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="ord_order_price_id"
+                                 baseTableName="ord_order_item"
+                                 constraintName="fk_ord_order_item__ord_order_price_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ord_order_price"/>
+
+        <addForeignKeyConstraint baseColumnNames="ord_order_item_relationship_id"
+                                 baseTableName="ord_order_item"
+                                 constraintName="fk_ord_order_item__ord_order_item_relationship_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ord_order_item_relationship"/>
+
+        <addForeignKeyConstraint baseColumnNames="ord_product_offering_ref_id"
+                                 baseTableName="ord_order_item"
+                                 constraintName="fk_ord_order_item__ord_product_offering_ref_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ord_product_offering_ref"/>
+
+        <addForeignKeyConstraint baseColumnNames="ord_product_id"
+                                 baseTableName="ord_order_item"
+                                 constraintName="fk_ord_order_item__ord_product_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ord_product"/>
+
+        <addForeignKeyConstraint baseColumnNames="ord_order_item_provisioning_id"
+                                 baseTableName="ord_order_item"
+                                 constraintName="fk_ord_order_item__ord_order_item_provisioning_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ord_order_item_provisioning"/>
+
+        <addForeignKeyConstraint baseColumnNames="ord_product_order_id"
+                                 baseTableName="ord_order_item"
+                                 constraintName="fk_ord_order_item__ord_product_order_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ord_product_order"/>
+    </changeSet>
+</databaseChangeLog>

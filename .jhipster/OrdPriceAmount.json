@@ -1,0 +1,62 @@
+{
+  "name": "OrdPriceAmount",
+  "fields": [
+    {
+      "fieldName": "currencyCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "taxIncludedAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "dutyFreeAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "taxRate",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "percentage",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "totalRecurringPrice",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "totalOneTimePrice",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "ordOrderPrice",
+      "otherEntityRelationshipName": "ordPriceAmount",
+      "relationshipName": "ordOrderPrice",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "ordPriceAlteration",
+      "otherEntityRelationshipName": "ordPriceAmount",
+      "relationshipName": "ordPriceAlteration",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "ord_price_amount",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "OrderManagement",
+  "clientRootFolder": "OrderManagement",
+  "databaseType": "sql",
+  "changelogDate": "20210714073636"
+}

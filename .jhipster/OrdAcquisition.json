@@ -1,0 +1,52 @@
+{
+  "name": "OrdAcquisition",
+  "fields": [
+    {
+      "fieldName": "channel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "affiliate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "partner",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "acquisitionAgent",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "action",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ordAcquisitionChar",
+      "otherEntityRelationshipName": "ordAcquisition",
+      "relationshipName": "ordAcquisitionChar"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ordProductOrder",
+      "otherEntityRelationshipName": "ordAcquisition",
+      "relationshipName": "ordProductOrder"
+    }
+  ],
+  "entityTableName": "ord_acquisition",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "OrderManagement",
+  "clientRootFolder": "OrderManagement",
+  "databaseType": "sql",
+  "changelogDate": "20210714073635"
+}

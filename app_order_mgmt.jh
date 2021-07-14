@@ -1,0 +1,275 @@
+entity OrdProductOrder {
+	href String,
+    externalId String,
+    priority String,
+    description String,
+    category String,
+    status String,
+    orderDate Instant,
+    completionDate Instant,
+    requestedStartDate Instant,
+    requestedCompletionDate Instant,
+    expectedCompletionDate Instant,
+    notificationContact String,
+    customerId Long,
+    shoppingCartId Integer,
+    type String,
+    locationId Long
+}
+
+entity OrdBillingAccountRef {
+	name String,
+    href String,
+    cartPriceId Long,
+    billingAccountId Long,
+    billingSystem String,
+    deliveryMethod String,
+    billingAddress String,
+    status String,
+    quoteId Long,
+    salesOrderId Long
+}
+
+entity OrdContactDetails {
+    contactName String,
+    contactPhoneNumber String,
+    contactEmailId String,
+    firstName String,
+    lastName String
+}
+
+entity OrdCharacteristics {
+	name String,
+    value String,
+    valueType String
+}
+
+entity OrdNote {
+	author String,
+    text String,
+    createdDate Instant
+}
+
+entity OrdChannel {
+	href String,
+    name String,
+    role String
+}
+
+entity OrdOrderPrice{
+	name String,
+    description String,
+    priceType String,
+    unitOfMeasure String,
+    recurringChargePeriod String,
+    priceId Long
+}
+
+entity OrdOrderItem{
+	billerId Long,
+    fullfillmentId Long,
+    acquisitionId Long,
+    action String,
+    state String,
+    quantity Long,
+    itemType String,
+    itemDescription String,
+    cartItemId Long,
+    createdBy String,
+    createdDate Instant,
+    updatedBy String,
+    updatedDate Instant
+}
+
+entity OrdOrderItemProvisioning {
+	provisioningId Long,
+    status String
+}
+
+entity OrdOrderItemChar {
+	name String,
+    value String
+}
+
+entity OrdProvisiongChar {
+	name String,
+    value String,
+    valueType String,
+    createdBy String,
+    createdDate Instant,
+}
+
+entity OrdPaymentRef {
+	paymentId Long,
+    href String,
+    name String,
+    paymentAmount BigDecimal,
+    acion String,
+    status String,
+    enrolRecurring String
+}
+
+entity OrdPriceAlteration {
+	name String,
+    description String,
+    priceType String,
+    unitOfMeasure String,
+    recurringChargePeriod String,
+    applicationDuration String,
+    priority String
+}
+
+entity OrdReason {
+	reason String,
+    description String,
+}
+
+entity OrdContract {
+	contractId Long,
+    languageId Long,
+    termTypeCode String,
+    action String,
+    status String
+}
+entity OrdContractCharacteristics {
+	name String,
+    value String,
+    valueType String,
+    createdBy String,
+    createdDate Instant
+}
+entity OrdFulfillment {
+	workorderId Long,
+    appointmentId Long,
+    orderFulfillmentType String,
+    alternateShippingAddress String,
+    orderCallAheadNumber String,
+    orderJobComments String,
+    status String
+}
+entity OrdFulfillmentChar {
+	name String,
+    value String,
+    valueType String,
+    createdBy String,
+    createdDate Instant
+}
+
+entity OrdAcquisition {
+	channel String,
+    affiliate String,
+    partner String,
+    acquisitionAgent String,
+    action String
+}
+
+entity OrdPriceAmount {
+	currencyCode String,
+    taxIncludedAmount BigDecimal,
+    dutyFreeAmount BigDecimal,
+    taxRate BigDecimal,
+    percentage BigDecimal,
+    totalRecurringPrice BigDecimal,
+    totalOneTimePrice BigDecimal
+}
+entity OrdPaymentRef {
+	paymentId Long,
+    href String,
+    name String,
+    paymentAmount BigDecimal,
+    action String,
+    status String,
+    enrolRecurring String,
+}
+entity OrdProductOfferingRef {
+	href String,
+    name String,
+    productGuid String
+}
+
+entity OrdAcquisitionChar {
+	name String,
+    value String,
+    valueType String,
+    createdBy String,
+    createdDate Instant
+}
+
+entity OrdOrderItemRelationship {
+	type String,
+    primaryOrderItemId Long,
+    secondaryOrderItemId Long,
+}
+
+entity OrdProduct {
+	versionId Long,
+    variationId Long,
+    lineOfService String,
+    assetId Long,
+    serialNo Long,
+    name String,
+}
+
+entity OrdPlace {
+	href String,
+    name String,
+    role String
+}
+
+entity OrdProductCharacteristics {
+	name String,
+    value String,
+    valueType String
+}
+entity OrdOrderItemProvisioning {
+	provisioningId Long,
+    status String
+}
+relationship OneToOne {
+	//OrdProductOrder
+	OrdProductOrder to OrdContactDetails,
+    OrdProductOrder to OrdNote,
+    OrdProductOrder to OrdChannel,
+    OrdProductOrder to OrdOrderPrice,
+    OrdProductOrder to OrdBillingAccountRef,
+    // OrdOrderItem
+    OrdOrderItem to OrdOrderPrice,
+    OrdOrderItem to OrdOrderItemRelationship,
+    OrdOrderItem to OrdProductOfferingRef,
+    OrdOrderItem to OrdProduct,
+    OrdOrderItem to OrdOrderItemProvisioning,
+    // OrdProduct
+    OrdProduct to OrdProductCharacteristics,
+    // OrdOrderPrice
+    OrdOrderPrice to OrdPriceAmount,
+    // OrdPriceAlteration
+    OrdPriceAlteration to OrdPriceAmount
+}
+
+relationship OneToMany {
+	//OrdProductOrder
+	OrdProductOrder to OrdCharacteristics,
+    OrdProductOrder to OrdOrderItem,
+    OrdProductOrder to OrdPaymentRef,
+    OrdProductOrder to OrdReason,
+    OrdProductOrder to OrdContract,
+    OrdProductOrder to OrdFulfillment,
+    OrdProductOrder to OrdAcquisition,
+    // OrdOrderPrice
+    OrdOrderPrice to OrdPriceAlteration,
+    
+    OrdOrderItem to OrdOrderItemChar,
+    OrdProduct to OrdPlace, 
+    OrdContract to OrdContractCharacteristics,
+    OrdFulfillment to OrdFulfillmentChar,
+    OrdAcquisition to OrdAcquisitionChar,
+    OrdOrderItemProvisioning to OrdProvisiongChar
+}
+
+
+service all with serviceImpl
+dto all with mapstruct
+filter all
+
+
+

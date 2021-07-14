@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity OrdProductOrder.
+    -->
+    <changeSet id="20210714073617-1" author="jhipster">
+        <createTable tableName="ord_product_order">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="href" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="external_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="priority" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="description" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="category" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="order_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="completion_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="requested_start_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="requested_completion_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="expected_completion_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="notification_contact" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="customer_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="shopping_cart_id" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="location_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="ord_contact_details_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_ord_product_order__ord_contact_details_id" />
+            </column>
+            <column name="ord_note_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_ord_product_order__ord_note_id" />
+            </column>
+            <column name="ord_channel_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_ord_product_order__ord_channel_id" />
+            </column>
+            <column name="ord_order_price_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_ord_product_order__ord_order_price_id" />
+            </column>
+            <column name="ord_billing_account_ref_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_ord_product_order__ord_billing_account_ref_id" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="ord_product_order" columnName="order_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="ord_product_order" columnName="completion_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="ord_product_order" columnName="requested_start_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="ord_product_order" columnName="requested_completion_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="ord_product_order" columnName="expected_completion_date" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20210714073617-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/ord_product_order.csv"
+                  separator=";"
+                  tableName="ord_product_order">
+            <column name="id" type="numeric"/>
+            <column name="href" type="string"/>
+            <column name="external_id" type="string"/>
+            <column name="priority" type="string"/>
+            <column name="description" type="string"/>
+            <column name="category" type="string"/>
+            <column name="status" type="string"/>
+            <column name="order_date" type="${datetimeType}"/>
+            <column name="completion_date" type="${datetimeType}"/>
+            <column name="requested_start_date" type="${datetimeType}"/>
+            <column name="requested_completion_date" type="${datetimeType}"/>
+            <column name="expected_completion_date" type="${datetimeType}"/>
+            <column name="notification_contact" type="string"/>
+            <column name="customer_id" type="numeric"/>
+            <column name="shopping_cart_id" type="numeric"/>
+            <column name="type" type="string"/>
+            <column name="location_id" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

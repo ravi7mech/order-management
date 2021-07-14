@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity OrdProductOrder.
+    -->
+    <changeSet id="20210714073617-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="ord_contact_details_id"
+                                 baseTableName="ord_product_order"
+                                 constraintName="fk_ord_product_order__ord_contact_details_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ord_contact_details"/>
+
+        <addForeignKeyConstraint baseColumnNames="ord_note_id"
+                                 baseTableName="ord_product_order"
+                                 constraintName="fk_ord_product_order__ord_note_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ord_note"/>
+
+        <addForeignKeyConstraint baseColumnNames="ord_channel_id"
+                                 baseTableName="ord_product_order"
+                                 constraintName="fk_ord_product_order__ord_channel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ord_channel"/>
+
+        <addForeignKeyConstraint baseColumnNames="ord_order_price_id"
+                                 baseTableName="ord_product_order"
+                                 constraintName="fk_ord_product_order__ord_order_price_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ord_order_price"/>
+
+        <addForeignKeyConstraint baseColumnNames="ord_billing_account_ref_id"
+                                 baseTableName="ord_product_order"
+                                 constraintName="fk_ord_product_order__ord_billing_account_ref_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ord_billing_account_ref"/>
+    </changeSet>
+</databaseChangeLog>
